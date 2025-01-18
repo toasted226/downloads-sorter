@@ -1,0 +1,7 @@
+[2025-01-18 10:00:52][INFO] "Videos": ["mp4", "mov", "avi", "webm", "mkv", "wmv"]
+[2025-01-18 10:00:52][INFO] "Audio": ["mp3", "wav", "ogg", "flac", "m4a"]
+[2025-01-18 10:00:52][INFO] "Archives": ["zip", "rar", "7z"]
+[2025-01-18 10:00:52][INFO] "Documents": ["txt", "pdf", "docx", "xlsx", "odt"]
+[2025-01-18 10:00:52][INFO] "Executables": ["exe", "msi"]
+[2025-01-18 10:00:52][INFO] "Images": ["png", "jpg", "jpeg", "gif", "bmp", "svg", "webp"]
+[2025-01-18 10:00:52][INFO] Beginning to monitor "C:\\Users\\keaga\\Downloads" for changes...
