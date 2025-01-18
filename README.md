@@ -1,8 +1,6 @@
 # Downloads Sorter
 
-Is your downloads folder constantly filled to the brim with files upon files, some having been there since the dawn of mankind?
-This small program runs in the background taking virtually no footprint, automatically sorting all your files in different folders
-in your downloads according to file type. Idea and testing by Mammutkung.
+Is your downloads folder constantly filled to the brim with files upon files, some having been there since the dawn of mankind? This small program runs in the background taking virtually no footprint, automatically sorting all your files in different folders in your downloads according to file type. Idea and testing by Mammutkung.
 
 ## Configuration
 
@@ -21,26 +19,15 @@ An example configuration looks like this:
 
 ## How it works
 
-The sorter works by reading in your configuration, watching your downloads folder for any file creation, 
-and moving files to their respective folders whenever a change has been detected. When a file is being downloaded,
-the sorter ignores the creation of any temporary files like .tmp and .crdownload on Windows to ensure your download 
-is not interrupted. The downloaded file will thereafter be moved into its respective folder. If the files type is 
-not specified in configuration, it will be moved into a folder labelled 'Other'.
+The sorter works by reading in your configuration, watching your downloads folder for any file creation, and moving files to their respective folders whenever a change has been detected. When a file is being downloaded, the sorter ignores the creation of any temporary files like .tmp and .crdownload on Windows to ensure your download is not interrupted. The downloaded file will thereafter be moved into its respective folder. If the files type is not specified in configuration, it will be moved into a folder labelled 'Other'.
 
-Typically, this kind of automation would be written in a small and simple language like Python - but I 
-decided to write this in Rust both to minimise the performance hit that the watching and sorting process would incur,
-and also to avoid the need for any other external dependencies to be installed. As such, in my testing, it has 
-virtually no memory or CPU footprint. I measured at maximum 1.1MB of memory usage, and negligable CPU usage.
+Typically, this kind of automation would be written in a small and simple language like Python - but I decided to write this in Rust both to minimise the performance hit that the watching and sorting process would incur, and also to avoid the need for any other external dependencies to be installed. As such, in my testing, it has virtually no memory or CPU footprint. I measured at maximum 1.1MB of memory usage, and negligable CPU usage.
 
-Once the program is running, you won't notice its existence. You can terminate it by finding and killing the process.
-On Windows, this will be done in Task Manager.
+Once the program is running, you won't notice its existence. You can terminate it by finding and killing the process. On Windows, this will be done in Task Manager.
 
 ## Cross-platform Capabilities
 
-I have tested this on both Windows 11 and Linux (NixOS 24.05 Uakari), and it works as expected. It should work on MacOS as well, 
-but I have not tested it there.
+I have tested this on both Windows 11 and Linux (NixOS 24.05 Uakari), and it works as expected. It should theoretically work on MacOS as well, but I have not tested it there.
 
 ### NixOS
-This program relies on the XDG_DOWNLOAD_DIR environment variable being set. If you're on NixOS and the program is failing to 
-detect your Downloads directory, try adding `xdg-user-dirs` to your NixOS configuration, running `xdg-user-dirs-update` and 
-restarting your shell.
+This program relies on the XDG_DOWNLOAD_DIR environment variable being set. If you're on NixOS and the program is failing to detect your Downloads directory, try adding `xdg-user-dirs` to your NixOS configuration, running `xdg-user-dirs-update` and restarting your shell.
