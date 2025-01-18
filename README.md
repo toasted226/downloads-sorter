@@ -15,7 +15,7 @@ An example configuration looks like this:
 	"Executables": ["exe", "msi"],
 	"Images": ["png", "jpg", "jpeg", "gif", "bmp", "svg", "webp"],
 	"Videos": ["mp4", "mov", "avi", "webm", "mkv", "wmv"],
-	"Audio": ["mp3", "wav", "ogg", "flac", "m4a"],
+	"Audio": ["mp3", "wav", "ogg", "flac", "m4a"]
 }
 ```
 
