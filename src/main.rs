@@ -1,9 +1,9 @@
 #![windows_subsystem = "windows"]
 
 use notify::{Watcher, RecursiveMode, Result, RecommendedWatcher, Config};
-use std::{collections::HashMap, ffi::OsStr, fs, path::{Path, PathBuf}, str::FromStr, thread, time::Duration};
-use directories::UserDirs;
+use std::{collections::HashMap, ffi::OsStr, fs, path::PathBuf, str::FromStr, thread, time::Duration};
 use chrono;
+use dirs_next;
 
 use fern::Dispatch;
 use log::LevelFilter;
@@ -37,8 +37,12 @@ fn main() -> Result<()> {
     sort_files();
 
     // get download directory
-    let user_dirs = UserDirs::new().unwrap();
-    let download_dir: &Path = user_dirs.download_dir().expect("Failed to get downloads directory");
+    let download_dir = dirs_next::download_dir();
+    if download_dir.is_none() {
+        info!("Failed to get download directory!");
+        return Ok(());
+    }
+    let download_dir = download_dir.unwrap();
 
     // Create a channel to receive the events
     let (tx, rx) = std::sync::mpsc::channel();
@@ -150,10 +154,14 @@ fn sort_files() -> bool {
     let file_groups = get_file_groups();
 
     // get download directory
-    let user_dirs = UserDirs::new().unwrap();
-    let download_dir: &Path = user_dirs.download_dir().expect("Failed to get downloads directory");
+    let download_dir = dirs_next::download_dir();
+    if download_dir.is_none() {
+        info!("Failed to get download directory!");
+        return false;
+    }
+    let download_dir = download_dir.unwrap();
     
-    let paths = fs::read_dir(download_dir).expect("Failed to read contents of downloads directory");
+    let paths = fs::read_dir(&download_dir).expect("Failed to read contents of downloads directory");
 
     // for each path in download directory
     for path in paths {
