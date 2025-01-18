@@ -2,7 +2,7 @@
 
 Is your downloads folder constantly filled to the brim with files upon files, some having been there since the dawn of mankind?
 This small program runs in the background taking virtually no footprint, automatically sorting all your files in different folders
-in your downloads according to file type.
+in your downloads according to file type. Idea and testing by Mammutkung.
 
 ## Configuration
 
