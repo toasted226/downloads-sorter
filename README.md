@@ -37,5 +37,10 @@ On Windows, this will be done in Task Manager.
 
 ## Cross-platform Capabilities
 
-I have only tested this on Windows, however, it should theoretically be able to run on Linux and MacOS.
+I have tested this on both Windows and Linux (NixOS 24.05 Uakari), and it works as expected. It should work on MacOS as well, 
+but I have not tested it there.
 
+### NixOS
+This program relies on the XDG_DOWNLOAD_DIR environment variable being set. If you're on NixOS and the program is failing to 
+detect your Downloads directory, try adding `xdg-user-dirs` to your NixOS configuration, running `xdg-user-dirs-update` and 
+restarting your shell.
