@@ -37,7 +37,7 @@ On Windows, this will be done in Task Manager.
 
 ## Cross-platform Capabilities
 
-I have tested this on both Windows and Linux (NixOS 24.05 Uakari), and it works as expected. It should work on MacOS as well, 
+I have tested this on both Windows 11 and Linux (NixOS 24.05 Uakari), and it works as expected. It should work on MacOS as well, 
 but I have not tested it there.
 
 ### NixOS
